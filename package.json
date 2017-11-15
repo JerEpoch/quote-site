@@ -1,0 +1,27 @@
+{
+  "name": "quotesite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JerEpoch/quotes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JerEpoch/quotes/issues"
+  },
+  "homepage": "https://github.com/JerEpoch/quotes#readme",
+  "devDependencies": {
+    "bower": "^1.8.2",
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-browser": "^3.0.6",
+    "gulp-size": "^2.1.0",
+    "gulp-watch": "^4.3.11"
+  }
+}

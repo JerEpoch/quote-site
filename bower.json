@@ -1,0 +1,22 @@
+{
+  "name": "quotesite",
+  "homepage": "https://github.com/JerEpoch/quotes",
+  "authors": [
+    "Jeremy <jeremy.studzinski@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  	"bootstrap": "^3.3.6",
+  	"vue": "^2.5.2"
+  }
+}

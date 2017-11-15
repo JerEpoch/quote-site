@@ -1,0 +1,14 @@
+body {
+	text-align: center;
+	background-color: #f5f5f5;
+}
+
+#all {
+	padding-top: 50px;
+	display: flex;
+	flex-direction: column;
+}
+
+h1 {
+	
+}
