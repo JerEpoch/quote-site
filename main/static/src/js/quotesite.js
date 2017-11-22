@@ -8,7 +8,7 @@ var app1 = new Vue ({
 var about = new Vue ({
   el: '#about',
   data: {
-    message: 'A collection of the craziest Trump quotes.'
+    message: 'A collection of the craziest Trump quotes. Just a little sample below.'
   }
 })
 

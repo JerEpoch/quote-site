@@ -10,5 +10,5 @@ handlers:
   script: main.app
 # [END handlers]
 
-skip_files:
-- ^lib/.*
+# skip_files:
+# - ^lib/.*

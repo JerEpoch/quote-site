@@ -6,6 +6,7 @@
 		<link href="/static/src/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="/static/style/main.css">
 		<link rel="stylesheet" type="text/css" href="/static/style/nav.css">
+		<link rel="stylesheet" type="text/css" href="/static/style/section.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.js"></script>
 		<meta name="dscription" content="A collection of the ridiculous things Trump says.">
 		{% block head %}
@@ -13,7 +14,7 @@
 		{% endblock %}
 	</head>
 	<body>
-		<div>{% include 'navbar.html' %}</div>
+		<header>{% include 'navbar.html' %}</header>
 		<div>{% block content %}{% endblock %}</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="/static/src/js/bootstrap.min.js"></script>
