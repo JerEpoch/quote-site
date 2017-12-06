@@ -1,6 +1,7 @@
 import logging
 from flask import Flask
 import flask
+import os
 
 # import flask
 
@@ -17,9 +18,17 @@ class CustomFlask(Flask):
 
 
 app = CustomFlask(__name__)
+app.secret_key = "RANDOM$()$(22KEY!!!#"
+production_env = os.getenv('SERVER_SOFTWARE').startswith('Google App Engine/')
+if not production_env:
+  from werkzeug.debug import DebuggedApplication
+  try:
+    app.wsgi_app = DebuggedApplication(app.wsgi_app, evalex=True)
+  except:
+    app.wsgi_app = DebuggedApplication(app.wsgi_app, evalex=True)
+  app.debug = True
+
 import quotes
 
-# import quotes
 
-if __name__ == '__main__':
-	app.debug= True
+

@@ -9,6 +9,15 @@ handlers:
 - url: /.*
   script: main.app
 # [END handlers]
+- url: /addquote/.*
+  script: main.app
+  login: admin
 
-# skip_files:
-# - ^lib/.*
+
+libraries:
+- name: jinja2
+  version: latest
+
+skip_files:
+- ^lib/.*
+^static/bower_components/.*
