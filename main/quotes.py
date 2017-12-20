@@ -2,8 +2,10 @@
 import flask
 from main import app
 from google.appengine.api import users
+from flask import request, jsonify, json
 import auth
-
+from model import quotes
+from werkzeug import HTTP_STATUS_CODES
 # app = Flask(__name__)
 
 # https://tutorialzine.com/2016/03/5-practical-examples-for-learning-vue-js
@@ -17,38 +19,30 @@ def index():
 def about():
 	return flask.render_template('about.html')
 
-@app.route('/signin')
-def sigin():
-	user = users.get_current_user()
-	logout_url = users.create_logout_url('/')
-	login_url = users.create_login_url('/')
-	if user:
-		greeting = "hi " + user.nickname()
-		
-		return flask.render_template('login.html', greeting=greeting, logout_url=logout_url,)
-	else:
-		
-		#flask.redirect(flask.url_for('login_url'))
-		greeting = "Login to Continue."
+@app.route('/test')
+def test():
+  user = users.get_current_user()
+  if user:
+		nickname = user.nickname()
+  return flask.render_template('test.html')
 
-	return flask.render_template('login.html', greeting=greeting,login_url=login_url)
-	#return flask.redirect(flask.url_for('index'))
-
-@app.route('/addquote')
+@app.route('/addquote', methods=['GET', 'POST'])
 @auth.admin_required
-def addQuote():
-	return flask.render_template('addquote.html')
+def addquote():
+  return flask.render_template('addquote.html')
 
-@app.context_processor
-def check_admin():
-	user = users.get_current_user()
-	if users.is_current_user_admin():
-		isAdmin = 'admin'
-	else:
-		isAdmin = ''
 
-	return dict(isAdmin=isAdmin)
+@app.route('/api/newquote', methods=['POST'])
+def newQuote():
+  data = request.get_json()
+  bodyText = data["text"]
+  source = data["source"]
+  newQuote_db = quotes.Quote(body=bodyText, source=source)
+  newQuote_db.put()
+  return jsonify(source), 201
 
-# @app.route('/signin')
-# def signin():
-# 	return flask.render_template('login.html')
+@app.route('/api/quotes', methods=['GET'])
+def allQuotes():
+  allQuotes = quotes.Quote.query().fetch()
+  allQuotes_json = json.dumps([q.to_dict() for q in allQuotes])
+  return allQuotes_json

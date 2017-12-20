@@ -26,3 +26,22 @@ section p{
 	text-transform: capitalize;
 }
 
+/* addquote.html */
+
+.quote {
+	height: 200px;
+	width: 500px;
+}
+
+.source {
+	width: 500px;
+}
+
+.quoteSubmit{
+	width: 250px;
+}
+
+.quoteErrors {
+	font-size: 2em;
+	color: red;
+}

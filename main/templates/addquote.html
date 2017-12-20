@@ -3,6 +3,19 @@
 {% block content %}
 
 <div id="all">
-	<h1>Add A Quote</h1>
+	<div id="addQuote">
+		<h1>Add A Quote</h1>
+		<section>
+			<form v-on:submit.prevent="newQuote">
+				<textarea v-model="quote.text" class="quote" placeholder="Add quote"></textarea>
+				<br>
+				<input type="text" v-model="quote.source" class="source" placeholder="source">
+				<br>
+				<button type="submit" class="quoteSubmit">Submit</button>
+			</form>
+			<span class="quoteErrors">{{errors}}</span>
+
+		</section>
+	</div>
 </div>
 {% endblock %}
