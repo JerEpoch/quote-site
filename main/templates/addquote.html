@@ -2,6 +2,10 @@
 
 {% block content %}
 
+
+
+
+
 <div id="all">
 	<div id="addQuote">
 		<h1>Add A Quote</h1>
@@ -15,6 +19,18 @@
 			</form>
 			<span class="quoteErrors">{{errors}}</span>
 
+		
+		<p></p>
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+			<div class="alert alert-success alert-dismissible" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+				(( message ))
+				</div>
+		  {% endfor %}
+		{% endif %}
+		{% endwith %}
 		</section>
 	</div>
 </div>

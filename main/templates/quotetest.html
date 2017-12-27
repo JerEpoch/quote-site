@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="all">
+<div id="getQuote">
+<h1>Quote test</h1>
+<section>
+   <button type="submit" class="quoteSubmit" v-on:click="getquote">Quote</button> 
+    <p v-for="quote in results">
+
+        {{ quote.body }}
+        <br>
+        (( source ))
+        <a :href="quote.source">Source</a>
+        
+    </p>
+
+</section>
+</div>
+</div>
+
+
+{% endblock %}

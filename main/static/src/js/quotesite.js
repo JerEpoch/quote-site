@@ -1,24 +1,23 @@
 
 
-
-// new Vue ({
-//   el: '#app1',
-//   data: {
-//     message: 'Work in Progress'
-//   }
-// });
-
-// new Vue ({
-//   el: '#about',
-//   data: {
-//     message: 'A collection of the craziest Trump quotes. Just a little sample below.'
-//   }
-// });
-// https://github.com/tysweezy/postit-sanic/blob/master/public/js/app.js
-
-
+new Vue ({
+  el: '#app1',
+  data: {
+    message: 'Work in Progress'
+  }
+});
 
 new Vue ({
+  el: '#about',
+  data: {
+    message: 'A collection of the craziest Trump quotes. Just a little sample below.'
+  }
+});
+https://github.com/tysweezy/postit-sanic/blob/master/public/js/app.js
+
+
+
+var addQuote = new Vue ({
   el: '#addQuote',
   data : {
     quote: {
@@ -41,39 +40,20 @@ new Vue ({
       })
       .then(function(response){
         console.log(response);
+
       })
       .catch(function(error){
         console.log(error);
       });
 
+      
       this.quote.text = '';
       this.quote.source = '';
-      // axios({
-      //   method: 'post',
-      //   url: '/newquote',
-      //   data: {
-      //     "body": this.quote.body,
-      //     "source": this.quote.source
-      //   }
-      // })
-      // .then(function(response){
-      //   console.log(response);
-      // })
-      // .catch(e => {
-      //   console.log(e);
-      // })
-      // if(!this.quote.body || !this.quote.source) {
-      //   return;
-      // }
-
-      // quote_obj = {
-      //   body: this.quote.body,
-      //   source: this.quote.source
-      // }
-      // this.message = this.quote.body
     }
   }
-})
+});
+
+
 
 
 // var app5 = new Vue({

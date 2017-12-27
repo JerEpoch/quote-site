@@ -16,10 +16,12 @@
 	<body>
 		<header>{% include 'navbar.html' %}</header>
 		<div>{% block content %}{% endblock %}</div>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.js"></script>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.js"></script> -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 		<script src="/static/src/js/bootstrap.min.js"></script>
 		<script src="(( url_for('static', filename='src/js/quotesite.js') ))"></script>
+		<script src="(( url_for('static', filename='src/js/getQuote.js') ))"></script>
 	</body>
 </html>

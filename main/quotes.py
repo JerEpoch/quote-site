@@ -5,7 +5,6 @@ from google.appengine.api import users
 from flask import request, jsonify, json
 import auth
 from model import quotes
-from werkzeug import HTTP_STATUS_CODES
 # app = Flask(__name__)
 
 # https://tutorialzine.com/2016/03/5-practical-examples-for-learning-vue-js
@@ -38,11 +37,16 @@ def newQuote():
   bodyText = data["text"]
   source = data["source"]
   newQuote_db = quotes.Quote(body=bodyText, source=source)
-  newQuote_db.put()
-  return jsonify(source), 201
+  if newQuote_db.put():
+    flask.flash("Quote added!")
+    return jsonify(bodyText, source), 201
 
 @app.route('/api/quotes', methods=['GET'])
 def allQuotes():
   allQuotes = quotes.Quote.query().fetch()
   allQuotes_json = json.dumps([q.to_dict() for q in allQuotes])
   return allQuotes_json
+
+@app.route('/getquotes', methods=['GET'])
+def getquotes():
+  return flask.render_template('quotetest.html')
