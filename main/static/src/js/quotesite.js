@@ -15,6 +15,12 @@ new Vue ({
 });
 https://github.com/tysweezy/postit-sanic/blob/master/public/js/app.js
 
+var hideButton = new Vue ({
+  el: '#testButton',
+  data: {
+    seen: true
+  }
+});
 
 
 var addQuote = new Vue ({
@@ -24,11 +30,13 @@ var addQuote = new Vue ({
       text: '',
       source: ''
     },
-    errors: ''
+    errors: '',
+    success: ''
   },
 
   methods: {
     newQuote: function(e){
+      const quote = this;
       // alert(this.quote.source)
       if(!this.quote.text || !this.quote.source){
         this.errors = "You must include text and source!"
@@ -39,7 +47,9 @@ var addQuote = new Vue ({
         source: this.quote.source
       })
       .then(function(response){
-        console.log(response);
+        console.log(this);
+        quote.success = "Added"
+        addQuote.success = "Quote Added!"
 
       })
       .catch(function(error){
@@ -49,6 +59,10 @@ var addQuote = new Vue ({
       
       this.quote.text = '';
       this.quote.source = '';
+    },
+
+    showFlash: function(){
+      addQuote.this.success = "Added!"
     }
   }
 });

@@ -10,6 +10,16 @@
 	{% else %}
 		<a href="((logout_url))">Logout</a>
 	{% endif %}
+	<section>
+		<div class="notification is-primary" id="testButton" v-if="seen">
+				<button class="delete" v-on:click="seen = !seen"></button>
+				Quote Added!
+			</div>
+			<b-message title="test" type="is-info">
+				Added
+			</b-message>
+			<alert title="test!" type="success" :closable="true">GOOD JOB!!</alert>
+	</section>
 </div>
 
 {% endblock %}

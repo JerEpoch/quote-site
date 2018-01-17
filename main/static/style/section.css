@@ -48,5 +48,5 @@ section p{
 
 .quoteSuccess {
 	font-size: 2em;
-	visibility: hidden;
+	color: blue;
 }

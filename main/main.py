@@ -18,7 +18,7 @@ class CustomFlask(Flask):
 
 
 app = CustomFlask(__name__)
-app.secret_key = "RANDOM$()$(22KEY!!!#"
+app.config.from_object('config')
 production_env = os.getenv('SERVER_SOFTWARE').startswith('Google App Engine/')
 if not production_env:
   from werkzeug.debug import DebuggedApplication

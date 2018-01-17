@@ -24,5 +24,4 @@ libraries:
 
 
 skip_files:
-- ^lib/.*
 - ^static/bower_components/.*
