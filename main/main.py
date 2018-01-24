@@ -29,6 +29,3 @@ if not production_env:
   app.debug = True
 
 import quotes
-
-
-

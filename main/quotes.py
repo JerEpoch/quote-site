@@ -22,6 +22,8 @@ def index():
 def about():
 	return flask.render_template('about.html')
 
+
+
 @app.route('/test')
 def test():
   user = users.get_current_user()

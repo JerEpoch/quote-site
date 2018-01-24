@@ -16,7 +16,8 @@
     "tests"
   ],
   "dependencies": {
-  	"bootstrap": "^3.3.6",
-  	"vue": "^2.5.2"
+    "bootstrap": "^3.3.6",
+    "vue": "^2.5.2",
+    "bulma": "^0.6.1"
   }
 }
