@@ -15,8 +15,8 @@
 				<br>
 				<a :href="quote.source">Source</a>
 			</p>
-			<button type="submit" class="quoteSubmit" v-if="moreQuotes" v-on:click="getquote">Get More Quotes!</button> 
-			<span v-if="!moreQuotes">You have reached the end of the quotes!</span>
+			<button type="submit" class="quoteSubmit btn btn-secondary" v-if="moreQuotes" v-on:click="getquote">Get More Quotes!</button> 
+			<span v-if="!moreQuotes" id="end-of-quotes">You have reached the end of the quotes! Come back soon for more!</span>
 		</div>
 	</section>
 </div>

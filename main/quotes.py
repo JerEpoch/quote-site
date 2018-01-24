@@ -4,7 +4,7 @@ import flask
 from main import app
 from google.appengine.api import users
 from google.appengine.datastore.datastore_query import Cursor
-from flask import request, jsonify, json
+from flask import request, jsonify, json, redirect, url_for
 import auth
 import random
 from model import quotes
@@ -12,6 +12,8 @@ from flask_wtf import FlaskForm
 # app = Flask(__name__)
 
 # https://tutorialzine.com/2016/03/5-practical-examples-for-learning-vue-js
+
+MAX_QUOTES = 10
 
 @app.route('/')
 def index():
@@ -44,7 +46,6 @@ def newQuote():
   source = data["source"]
   newQuote_db = quotes.Quote(body=bodyText, source=source)
   if newQuote_db.put():
-    # flask.flash("Quote added!")
     return jsonify(bodyText, source), 201
 
 # https://stackoverflow.com/questions/17975070/how-to-flip-to-previous-page-with-ndb-cursors?noredirect=1&lq=1
@@ -60,7 +61,7 @@ def allQuotes():
     offSetPage =  int(offSetPage)
   # cursor = Cursor(urlfsafe=self.request.get('cursor'))
   q = quotes.Quote.query()
-  allQuotes, cursor, more = q.fetch_page(1, start_cursor=cursor)
+  allQuotes, cursor, more = q.fetch_page(MAX_QUOTES, start_cursor=cursor)
   cursor_page = cursor.urlsafe() if more else None
   # q_forward = q.order(quotes.Quote.key)
   # q_reverse = q.order(-quotes.Quote.key)

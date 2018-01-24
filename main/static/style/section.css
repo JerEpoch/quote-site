@@ -5,16 +5,21 @@ section {
 }
 
 section p{
-	max-width: 750px;
-	text-align: center;
+	max-width: 850px;
+	/* text-align: center; */
 	line-height: 2;
-	padding: 0 20px;
+	/* padding: 0 20px; */
 }
 
 /*					Index					*/
 .index p {
 	padding-top: 20px;
 }
+
+#end-of-quotes {
+	
+}
+
 
 /*					About					*/
 .about h1 {
@@ -39,6 +44,8 @@ section p{
 
 .quoteSubmit{
 	width: 250px;
+	color: white;
+	background-color: #1976d2;
 }
 
 .quoteErrors {

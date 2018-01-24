@@ -25,13 +25,6 @@ var getQuotes = new Vue({
                   getQuotes.moreQuotes = false
                   console.log("is null")
                 }
-                // console.log(this.results[1].body + " " + this.results[1].source)
-                // var qs = JSON.parse(this.results)
-                // console.log(qs)
-                // var quoteLen = 0
-                // for(var k in this.results)
-                //     quoteLen++;
-                // console.log(quoteLen)
             })
             .catch(function(err){
                 console.log(err);
@@ -39,41 +32,3 @@ var getQuotes = new Vue({
         }
     }
 });
-
-
-
-const api = 'http://hn.algolia.com/api/v1/search_by_date';
-new Vue({
-    el:'#testQuote',
-  data: {
-      list: [],
-      tag: 'story',
-  },
-  methods: {
-    infiniteHandler($state) {
-      axios.get(api, {
-        params: {
-          tags: this.tag,
-          page: this.list.length / 20 + 1,
-        },
-      }).then(({ data }) => {
-        if (data.hits.length) {
-          this.list = this.list.concat(data.hits);
-          $state.loaded();
-          if (this.list.length / 20 === 10) {
-            $state.complete();
-          }
-        } else {
-          $state.complete();
-        }
-      });
-    },
-    changeFilter() {
-      this.list = [];
-      this.$nextTick(() => {
-        this.$refs.infiniteLoading.$emit('$InfiniteLoading:reset');
-      });
-    },
-  }
-
-})

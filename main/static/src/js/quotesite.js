@@ -31,7 +31,8 @@ var addQuote = new Vue ({
       source: ''
     },
     errors: '',
-    success: ''
+    success: '',
+    addedSuccess: false
   },
 
   methods: {
@@ -47,10 +48,8 @@ var addQuote = new Vue ({
         source: this.quote.source
       })
       .then(function(response){
-        console.log(this);
-        quote.success = "Added"
-        addQuote.success = "Quote Added!"
-
+        // addQuote.success = "Quote Added!"
+        addQuote.addedSuccess = !addQuote.addedSuccess
       })
       .catch(function(error){
         console.log(error);
@@ -67,51 +66,3 @@ var addQuote = new Vue ({
   }
 });
 
-
-
-
-// var app5 = new Vue({
-//   el: '#app2',
-//   data: {
-//     message: 'Hello Vue.js!'
-//   },
-//   methods: {
-//     reverseMessage: function () {
-//       this.message = this.message.split('').reverse().join('')
-//     }
-//   }
-// })
-
-// var example1 = new Vue({
-//   el: '#example-1',
-//   data: {
-//     counter: 0
-//   }
-// })
-
-// var demo = new Vue({
-
-//     // A DOM element to mount our view model.
-//     el: '#mainBase',
-
-//     // This is the model.
-//     // Define properties and give them initial values.
-//     data: {
-//         active: 'home'
-//     },
-
-//     methods: {
-//       submit: function  () {
-//         axios.post('/newquote')
-//       }
-//     }
-    
-
-//     // Functions we will be using.
-//     // methods: {
-//     //     makeActive: function(item){
-//     //         // When a model is changed, the view will be automatically updated.
-//     //         this.active = item;
-//     //     }
-//     // }
-// });
