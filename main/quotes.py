@@ -9,6 +9,7 @@ import auth
 import random
 from model import quotes
 from flask_wtf import FlaskForm
+import seedDB
 # app = Flask(__name__)
 
 # https://tutorialzine.com/2016/03/5-practical-examples-for-learning-vue-js
@@ -24,14 +25,20 @@ def index():
 def about():
 	return flask.render_template('about.html')
 
+#==========================================
+#
+#       COMMENT THIS OUT BEFORE UPLOAD!!!!
+#
+#===========================================
 
-
-@app.route('/test')
+@app.route('/seed')
 def test():
-  user = users.get_current_user()
-  if user:
-		nickname = user.nickname()
-  return flask.render_template('test.html')
+    seedDB.seed_base()
+    return "seeded the base"
+  # user = users.get_current_user()
+  # if user:
+	# 	nickname = user.nickname()
+  # return flask.render_template('test.html')
 
 @app.route('/addquote', methods=['GET', 'POST'])
 @auth.admin_required

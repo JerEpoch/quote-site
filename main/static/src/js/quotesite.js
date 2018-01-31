@@ -1,24 +1,9 @@
 
 
 new Vue ({
-  el: '#app1',
-  data: {
-    message: 'Work in Progress'
-  }
-});
-
-new Vue ({
   el: '#about',
   data: {
-    message: 'A collection of the craziest Trump quotes. Just a little sample below.'
-  }
-});
-https://github.com/tysweezy/postit-sanic/blob/master/public/js/app.js
-
-var hideButton = new Vue ({
-  el: '#testButton',
-  data: {
-    seen: true
+    message: 'A collection of the craziest Trump quotes.'
   }
 });
 

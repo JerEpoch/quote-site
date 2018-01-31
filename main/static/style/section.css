@@ -4,7 +4,7 @@ section {
 	align-items: center;
 }
 
-section p{
+section p {
 	max-width: 850px;
 	/* text-align: center; */
 	line-height: 2;
@@ -17,7 +17,12 @@ section p{
 }
 
 #end-of-quotes {
-	
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+.aboutHeader {
+	padding-top: 20px;
 }
 
 

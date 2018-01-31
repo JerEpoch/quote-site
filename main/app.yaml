@@ -11,6 +11,10 @@ handlers:
   script: main.app
   login: admin
 
+- url: /seed.*
+  script: main.app
+  login: admin
+
 - url: /.*
   script: main.app
 

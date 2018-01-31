@@ -1,5 +1,4 @@
 from google.appengine.ext import ndb
-from flask import json
 
 
 class Quote(ndb.Model):
