@@ -1,25 +1,19 @@
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+
+body {
+	background-color: #f5f5f5;
 	font-family: 'Raleway', sans-serif;
 	font-size: 16px;
 }
 
-
-
-body {
-	background-color: #f5f5f5;
-}
-
-/* .container {
-	height: 100vh;
-} */
-
 #all {
+	line-height: 1.5;
+	padding: 2em 1em;
 	padding-top: 45px;
-	display: flex;
+	/* display: flex;
 	text-align: center;
-	flex-direction: column;
+	flex-direction: column; */
 }
 
+h1 {
+	padding-bottom: 10px;
+}

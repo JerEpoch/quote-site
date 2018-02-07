@@ -1,4 +1,4 @@
-section {
+/* section {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -7,9 +7,9 @@ section {
 section p{
 	max-width: 850px;
 	/* text-align: center; */
-	line-height: 2;
+	/* line-height: 2; */
 	/* padding: 0 20px; */
-}
+} */
 
 /*					Index					*/
 .index p {
@@ -19,6 +19,10 @@ section p{
 #end-of-quotes {
 	font-weight: bold;
 	font-size: 1.5em;
+}
+
+#trumpQuotes {
+	padding-bottom: 10px;
 }
 
 .aboutHeader {
@@ -61,4 +65,14 @@ section p{
 .quoteSuccess {
 	font-size: 2em;
 	color: blue;
+}
+
+hr {
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); 
+	width: 55%;
+	height: 1px;
+}
+
+ul {
+	list-style: none;
 }
