@@ -33,7 +33,10 @@ var addQuote = new Vue ({
         source: this.quote.source
       })
       .then(function(response){
-        // addQuote.success = "Quote Added!"
+        addQuote.success = "Quote Added!"
+        setTimeout(function() {
+          addQuote.success = '';
+        }, 1000);
         addQuote.addedSuccess = !addQuote.addedSuccess
       })
       .catch(function(error){

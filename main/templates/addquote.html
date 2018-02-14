@@ -8,26 +8,27 @@
 
 <div id="all">
 	<div id="addQuote">
-		<h1>Add A Quote</h1>
-		<section>
-			<form v-on:submit.prevent="newQuote">
-				
-				<textarea v-model="quote.text" class="quote" placeholder="Add quote"></textarea>
-				<br>
-				<input type="text" v-model="quote.source" class="source" placeholder="source">
-				<br>
-				<button type="submit" class="quoteSubmit button is-dark" >Submit</button>
-			</form>
-			<span class="quoteErrors">{{errors}}</span>
-			<span class="quoteSuccess">{{success}}</span>
-			<b-alert show dismissible v-if="addedSuccess">
-				Quote was added
-			</b-alert>
-			<!-- <div class="alert alert-success alert-dismissible" role="alert">
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<strong>Quote was added!!!</strong>  -->
+		<div class="container-fluid text-center">
+			<div class="row">
+			<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+				<h1>Add A Quote</h1>
+				<section>
+					<form v-on:submit.prevent="newQuote">
+						<textarea v-model="quote.text" class="quote" placeholder="Add quote"></textarea>
+						<br>
+						<input type="text" v-model="quote.source" class="source" placeholder="source">
+						<br><br>
+						<button type="submit" class="quoteSubmit button is-dark" >Submit</button>
+					</form>
+					<span class="quoteErrors">{{errors}}</span>
+					<span class="quoteSuccess">{{success}}</span>
+					<!-- <div class="alert alert-success alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<strong>Quote was added!!!</strong>  -->
+				</section>
 			</div>
-		</section>
+			</div>
+		</div>
 	</div>
 </div>
 {% endblock %}

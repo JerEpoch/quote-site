@@ -31,10 +31,10 @@ def about():
 #
 #===========================================
 
-@app.route('/seed')
-def test():
-    seedDB.seed_base()
-    return "seeded the base"
+# @app.route('/seed')
+# def test():
+#     seedDB.seed_base()
+#     return "seeded the base"
   # user = users.get_current_user()
   # if user:
 	# 	nickname = user.nickname()
